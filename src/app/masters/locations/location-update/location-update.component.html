@@ -1,0 +1,53 @@
+**********************************
+    Content body start
+***********************************-->
+<div class="content-body">
+	<div class="container-fluid">
+		
+        <div class="row page-titles mx-0">
+            <div class="col-sm-6 p-md-0">
+                <div class="welcome-text">
+                    <h4>Hi, welcome back!</h4>
+                </div>
+            </div>
+            <div class="col-sm-6 p-md-0 justify-content-sm-end mt-2 mt-sm-0 d-flex">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="javascript:void(0)">Dashboard</a></li>
+                    <li class="breadcrumb-item"><a href="javascript:void(0)">Masters</a></li>
+                    <li class="breadcrumb-item"><a href="javascript:void(0)">Locations</a></li>
+                    <li class="breadcrumb-item active"><a href="javascript:void(0)">Edit</a></li>
+                </ol>
+            </div>
+        </div>
+        <!-- row -->
+        <div class="row">
+			<div class="col-lg-12">
+                <div class="card">
+                    <div class="card-header">
+                        <h4 class="card-title">Edit location</h4>
+                    </div>
+                    <div class="card-body">
+                        <div class="basic-form">
+                            <form [formGroup]="LocationForm">
+                                <div class="form-row">
+                                    <div class="form-group col-md-8">
+                                        <label>Location</label>
+                                        <input type="text" formControlName="location" name="location" class="form-control" >
+                                    </div>
+                                </div>
+                                <button type="button" (click)="onSubmit(1)" [disabled]="disableBtn" class="btn btn-primary">
+                                    <span *ngIf="!isSaveBtnLoading">Save</span>
+                                    <i class="fa fa-refresh fa-spin" *ngIf="isSaveBtnLoading"></i>
+                                </button>
+                                <!-- <button type="button" (click)="onSubmit(2)" [disabled]="disableBtn" class="btn btn-primary ml-2">
+                                    <span *ngIf="!isSaveCBtnLoading">Save & Continue</span>
+                                    <i class="fa fa-refresh fa-spin" *ngIf="isSaveCBtnLoading"></i>
+                                </button> -->
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

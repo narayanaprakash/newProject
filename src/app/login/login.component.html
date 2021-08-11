@@ -1,0 +1,51 @@
+<div id="preloader" [ngClass]="{show: isLoading===true}">
+    <div class="sk-three-bounce">
+        <div class="sk-child sk-bounce1"></div>
+        <div class="sk-child sk-bounce2"></div>
+        <div class="sk-child sk-bounce3"></div>
+    </div>
+</div>
+<div class="authincation h-100">
+        <div class="container h-100">
+            <div class="row justify-content-center h-100 align-items-center margintop70">
+                <div class="col-md-6">
+                    <div class="authincation-content">
+                        <div class="row no-gutters">
+                            <div class="col-xl-12">
+                                <div class="auth-form">
+                                    <div class="text-center mb-3">
+                                        <img src="assets/logo/logo.png" width="100" height="100" alt="">
+                                    </div>
+                                    <h4 class="text-center mb-4">Sign in your account</h4>
+                                    <form [formGroup]="UserLoginForm" (ngSubmit)="onSubmit()">
+                                        <div class="form-group">
+                                            <label class="mb-1"><strong>Email</strong></label>
+                                            <input type="text" (keyup)="onKeyUp($event)" formControlName="username" name="username" class="form-control" id="user-name" placeholder="Your Email ID">
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="mb-1"><strong>Password</strong></label>
+                                            <input type="password" (keyup)="onKeyUp($event)" formControlName="password" name="password" class="form-control" id="user-password" placeholder="Enter Password">
+                                        </div>
+                                        <div class="form-row d-flex justify-content-between mt-4 mb-2">
+                                            <div class="form-group">
+                                               <div class="custom-control custom-checkbox ml-1">
+                                                    <input type="checkbox" class="custom-control-input" id="basic_checkbox_1">
+                                                    <label class="custom-control-label" for="basic_checkbox_1">Remember my preference</label>
+                                                </div>
+                                            </div>
+                                            <div class="form-group">
+                                                <a href="#/login">Forgot Password?</a>
+                                            </div>
+                                        </div>
+                                        <div class="text-center">
+                                            <button type="submit" [disabled]="disableBtn" class="btn btn-primary btn-block">Login</button>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
