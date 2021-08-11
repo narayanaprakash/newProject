@@ -13,6 +13,8 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { LocationCreateComponent } from './masters/locations/location-create/location-create.component';
 import { LocationUpdateComponent } from './masters/locations/location-update/location-update.component';
 import { LocationListComponent } from './masters/locations/location-list/location-list.component';
+import { SubjectListComponent } from './masters/Subject/subject-list/subject-list/subject-list.component';
+import { SubjectCreateComponent } from './masters/Subject/subject-create/subject-create/subject-create.component';
 const appRoutes: Routes = [
     { 
         path: '', 
@@ -52,7 +54,23 @@ const appRoutes: Routes = [
         children: [
           { path: 'masters/locations/edit', component: LocationUpdateComponent},
         ]
-    }
+    },
+    //Create Subject
+    { 
+      path: '',
+      component: SiteLayoutComponent, 
+      children: [
+        { path: 'masters/subjectCreate', component: SubjectCreateComponent},
+      ]
+  },
+   //List Subject
+   { 
+    path: '',
+    component: SiteLayoutComponent, 
+    children: [
+      { path: 'masters/subjectCreate/list', component: SubjectListComponent},
+    ]
+}
 ];
 
 export const routing = RouterModule.forRoot(appRoutes,{

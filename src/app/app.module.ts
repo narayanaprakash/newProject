@@ -23,6 +23,7 @@ import { CarouselModule } from 'ngx-bootstrap/carousel';
 import { NgxIndexedDBModule, DBConfig } from 'ngx-indexed-db';
 import { NgApexchartsModule } from "ng-apexcharts";
 import { MetismenuAngularModule } from "@metismenu/angular";
+import { CommonModule } from '@angular/common'; 
 
 const dbConfig: DBConfig  = 
 {
@@ -49,6 +50,8 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { LocationCreateComponent } from './masters/locations/location-create/location-create.component';
 import { LocationUpdateComponent } from './masters/locations/location-update/location-update.component';
 import { LocationListComponent } from './masters/locations/location-list/location-list.component';
+import { SubjectListComponent } from './masters/Subject/subject-list/subject-list/subject-list.component';
+import { SubjectUpdateComponent } from './masters/Subject/subject-update/subject-update/subject-update.component';
 
 
 @NgModule({
@@ -57,9 +60,9 @@ import { LocationListComponent } from './masters/locations/location-list/locatio
     SiteLayoutComponent, 
     SiteHeaderComponent, 
     SiteFooterComponent, 
-    LoginComponent, DashboardComponent, LocationCreateComponent, LocationUpdateComponent, LocationListComponent
+    LoginComponent, DashboardComponent, LocationCreateComponent, LocationUpdateComponent, LocationListComponent, SubjectListComponent, SubjectUpdateComponent
   ],
-  imports: [  MetismenuAngularModule, BrowserModule, BrowserAnimationsModule, routing,ToastrModule.forRoot({timeOut: 3000,positionClass: 'toast-top-right',maxOpened:1,autoDismiss:true}), FormsModule, ReactiveFormsModule, HttpClientModule,BsDatepickerModule.forRoot(), AngularMultiSelectModule, NgMultiSelectDropDownModule.forRoot(),NgxPaginationModule,LazyLoadImageModule, ModalModule.forRoot(), CarouselModule.forRoot(), NgxIndexedDBModule.forRoot(dbConfig)],
+  imports: [  MetismenuAngularModule, BrowserModule, BrowserAnimationsModule,CommonModule, routing,ToastrModule.forRoot({timeOut: 3000,positionClass: 'toast-top-right',maxOpened:1,autoDismiss:true}), FormsModule, ReactiveFormsModule, HttpClientModule,BsDatepickerModule.forRoot(), AngularMultiSelectModule, NgMultiSelectDropDownModule.forRoot(),NgxPaginationModule,LazyLoadImageModule, ModalModule.forRoot(), CarouselModule.forRoot(), NgxIndexedDBModule.forRoot(dbConfig)],
   providers: [ UserService, UserGlobalService, Title, ConfirmDialogService],
   bootstrap: [AppComponent]
 })
